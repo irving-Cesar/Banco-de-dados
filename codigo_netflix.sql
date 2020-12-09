@@ -947,7 +947,7 @@ ORDER BY f.ano_lancamento ASC;
 -- =================== QUESTÃO 5 =================== --
 CREATE VIEW atores_que_mais_participaram AS
 
-SELECT a.nome, COUNT(fg.genero)  AS "Quantidade de gêneros participados"
+SELECT a.nome, COUNT(DISTINCTROW fg.genero)  AS "Quantidade de gêneros participados"
 FROM atores AS a
 INNER JOIN filme_genero AS fg
 INNER JOIN filme_atores AS fa 
